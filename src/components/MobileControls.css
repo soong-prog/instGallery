@@ -1,0 +1,77 @@
+/* 移动端控制容器 / Mobile controls container */
+.mobile-controls-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 100;
+    display: grid !important; /* 使用 Grid 布局 / Use Grid layout */
+    grid-template-areas: ". w ." "a shift d" ". s ."; /* 定义类似游戏手柄的 D-pad 布局 / Define a D-pad like layout similar to a gamepad */
+    grid-template-columns: 120px 120px 120px;
+    grid-template-rows: 64px 64px 64px;
+    gap: 20px;
+    user-select: none; /* 防止用户选择按钮上的文本 / Prevent user from selecting text on buttons */
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+/* 按钮通用样式 / General button styles */
+.mobile-controls-container button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(47, 79, 79, 0.5);
+    backdrop-filter: blur(16px); /* 玻璃拟态效果 / Glassmorphism effect */
+    color: #F5F5DC;
+    border: 1px solid transparent;
+    border-radius: 32px;
+    font-family: "EB Garamond", "Times New Roman", serif;
+    font-size: 24px;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05), 0 8px 16px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    touch-action: manipulation; /* 优化触摸响应，防止意外的缩放或平移 / Optimize touch response, prevent accidental zoom/pan */
+    width: 120px;
+    height: 64px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+/* 按钮按下时的活动状态 / Active state for when a button is pressed */
+.mobile-controls-container button:active {
+    transform: scale(0.95);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 将按钮分配到网格区域 / Assign buttons to grid areas */
+.mobile-controls-container .key-w {
+    grid-area: w;
+}
+
+.mobile-controls-container .key-a {
+    grid-area: a;
+}
+
+.mobile-controls-container .key-s {
+    grid-area: s;
+}
+
+.mobile-controls-container .key-d {
+    grid-area: d;
+}
+
+.mobile-controls-container .key-shift {
+    grid-area: shift;
+    font-size: 24px;
+    border-radius: 32px;
+}
+
+/* 默认情况下，在非触摸设备上隐藏控件 (使用媒体查询) / Hide controls on non-touch devices by default (using media query) */
+/* 你可能需要在 JS 中使用更可靠的检测方法 / You might want a more robust detection method in JS */
+/* 此媒体查询针对具有精细指针（如鼠标）且支持悬停的设备 / This media query targets devices with a fine pointer (like a mouse) that can hover */
+@media (hover: hover) and (pointer: fine) {
+    .mobile-controls-container {
+        /* display: none; */ /* 为了方便测试，保持可见；取消注释以隐藏 / Keep visible for testing, uncomment to hide */
+    }
+}

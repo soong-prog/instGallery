@@ -1,0 +1,91 @@
+:root {
+  /* 设置根元素的字体 / Set font for the root element */
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* 设置根元素的行高 / Set line height for the root element */
+  line-height: 1.5;
+  /* 设置根元素的字体粗细 / Set font weight for the root element */
+  font-weight: 400;
+
+  /* 设置颜色模式 / Set color scheme */
+  color-scheme: light dark;
+  /* 设置根元素的文字颜色 / Set text color for the root element */
+  color: rgba(255, 255, 255, 0.87);
+  /* 设置根元素的背景颜色 / Set background color for the root element */
+  background-color: #242424;
+
+  /* 设置字体合成 / Set font synthesis */
+  font-synthesis: none;
+  /* 设置文本渲染 / Set text rendering */
+  text-rendering: optimizeLegibility;
+  /* 设置字体平滑 / Set font smoothing */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 设置链接的字体粗细 / Set font weight for links */
+a {
+  font-weight: 500;
+  /* 设置链接的颜色 / Set color for links */
+  color: #646cff;
+  /* 设置链接的下划线样式 / Set text decoration for links */
+  text-decoration: inherit;
+}
+/* 设置链接悬停时的颜色 / Set color for links on hover */
+a:hover {
+  color: #535bf2;
+}
+
+/* 设置body的边距，居中对齐，最小宽度和高度 / Set body margin, alignment, and min-width/height */
+body {
+  /* 禁止文本选择 / Disable text selection */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Standard syntax */
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* 设置标题的字体大小和行高 / Set font size and line height for h1 */
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+/* 设置按钮的圆角，边框，内边距，字体大小，粗细，字体，背景颜色，光标样式，过渡效果 / Set button border-radius, border, padding, font-size, weight, family, background-color, cursor, and transition */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+/* 设置按钮悬停时的边框颜色 / Set border color for buttons on hover */
+button:hover {
+  border-color: #646cff;
+}
+/* 设置按钮聚焦时的边框样式 / Set outline for buttons on focus */
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* 设置在浅色模式下，根元素的文字颜色，背景颜色，链接悬停时的颜色，按钮的背景颜色 / Set styles for light color scheme */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button { /* 设置按钮的背景颜色为#f9f9f9 / Set button background color to #f9f9f9 */
+    background-color: #f9f9f9;
+  }
+}
